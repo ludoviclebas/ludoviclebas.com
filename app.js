@@ -7,7 +7,7 @@ const sleepImage = document.getElementById('sleepImage');
 const sleepQuote = document.getElementById('sleepQuote');
 const sleepTheme = document.getElementById('sleepTheme');
 
-const IDLE_DELAY = 30000;
+const IDLE_DELAY = 60000;
 const SLIDE_DELAY = 9000;
 const OPENING_HOLD = 900 * 1.05;
 const OPENING_FADE = 650 * 1.05;
