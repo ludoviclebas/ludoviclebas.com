@@ -8,10 +8,10 @@
   <link rel="stylesheet" href="styles.css?v=phenix-20261003">
   <style>
     @media(max-width:760px), (max-width:950px) and (max-height:500px){
-      .signature-view .philosophy-banner img{transform:scale(.75)}
+      .signature-view .philosophy-banner img{width:min(100%,calc((100svh - 94px)*16/9));margin:auto}
     }
     @media(max-width:760px) and (orientation:portrait){
-      .signature-view .philosophy-banner img{transform:translate(-50%,-50%) rotate(90deg) scale(.75)}
+      .signature-view .philosophy-banner img{width:min(calc(100svh - 94px),calc((100vw - 24px)*16/9));margin:0;transform:translate(-50%,-50%) rotate(90deg)}
     }
   </style>
 </head>
