@@ -4,9 +4,22 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Manifeste — Ludovic Lebas</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=phenix-20261007c">
+<style>
+body.single-page-viewer{padding:0;min-height:100dvh}
+.single-page-viewer .document-pages{max-width:none;margin:0;display:block;height:calc(100dvh - 60px);overflow:auto;padding:8px 12px;box-sizing:border-box}
+.single-page-viewer .document-page{height:100%;display:flex;align-items:flex-start;justify-content:center}
+.single-page-viewer .document-page img{width:auto;height:100%;max-width:100%;object-fit:contain;background:transparent}
+.single-page-viewer .document-navigation{position:fixed;bottom:0;left:0;right:0;height:60px;margin:0;padding:8px 12px;box-sizing:border-box;display:flex;gap:24px;align-items:center;justify-content:center;border-top:1px solid #C8AC74}
+.single-page-viewer .zoom-controls{display:flex;gap:6px;align-items:center}
+.single-page-viewer button{font:inherit;color:#123E60;background:white;border:1px solid #C8AC74;border-radius:5px;min-width:34px;height:34px;cursor:pointer}
+.single-page-viewer button:focus-visible{outline:2px solid #123E60;outline-offset:2px}
+.single-page-viewer.is-zoomed .document-page{display:block;height:auto;width:max-content;min-width:100%}
+.single-page-viewer.is-zoomed .document-page img{height:auto;max-width:none;margin:0 auto}
+@media(max-width:500px){.single-page-viewer .document-navigation{gap:12px}.single-page-viewer .document-navigation a{font-size:11px}.single-page-viewer button{min-width:30px}}
+</style>
 </head>
-<body class="document-body">
+<body class="document-body single-page-viewer">
   <main class="document-pages" aria-label="Manifeste de Ludovic Lebas">
     <figure class="document-page" id="page-1">
       <img src="manifeste-20261007.jpg" width="1698" height="2400" loading="eager" alt="Manifeste de Ludovic Lebas — page 1 sur 1. Version PDF accessible en bas de l’écran ou du document.">
@@ -16,7 +29,26 @@
   <nav class="signature-navigation document-navigation" aria-label="Navigation du document">
     <a href="index.html">ACCUEIL</a>
     <a class="document-original" href="documents/MANIFESTE_LEBAS_Ludovic.pdf" target="_blank" rel="noopener">PDF ORIGINAL</a>
+    <div class="zoom-controls" role="group" aria-label="Zoom du document">
+      <button type="button" id="zoom-out" aria-label="Réduire le zoom">−</button>
+      <button type="button" id="zoom-fit" aria-label="Afficher toute la page">Page</button>
+      <button type="button" id="zoom-in" aria-label="Agrandir le document">+</button>
+    </div>
   </nav>
+  <script>
+  (() => {
+    const image=document.querySelector('.document-page img');
+    const viewport=document.querySelector('.document-pages');
+    let zoom=1, fittedWidth=0;
+    function fit(){zoom=1;document.body.classList.remove('is-zoomed');image.style.width='';viewport.scrollTop=0;viewport.scrollLeft=0;fittedWidth=image.getBoundingClientRect().width;}
+    function setZoom(value){if(value<=1){fit();return;}if(!fittedWidth)fittedWidth=image.getBoundingClientRect().width;zoom=Math.min(4,value);document.body.classList.add('is-zoomed');image.style.width=(fittedWidth*zoom)+'px';}
+    document.querySelector('#zoom-in').addEventListener('click',()=>setZoom(zoom+.5));
+    document.querySelector('#zoom-out').addEventListener('click',()=>setZoom(zoom-.5));
+    document.querySelector('#zoom-fit').addEventListener('click',fit);
+    window.addEventListener('resize',()=>{if(zoom===1)fit();});
+    if(image.complete)fit();else image.addEventListener('load',fit,{once:true});
+  })();
+  </script>
 </body>
 </html>
 
