@@ -35,10 +35,11 @@ button{font:inherit}
 .result-link{display:block;text-decoration:none;background:rgba(251,250,246,.42);transition:background .2s ease,transform .2s ease}
 .result-link+.result-link{border-left:1px solid rgba(179,138,67,.3)}
 .result-link:hover,.result-link:focus-visible{background:rgba(255,255,255,.94);transform:translateY(-2px);outline:none}
-.results article{text-align:center;padding:14px 8px;min-height:104px}
+.results article{text-align:center;padding:14px 8px;min-height:104px;display:grid;grid-template-rows:32px 32px 30px 18px;align-items:center}
 .results article strong{display:block;color:var(--gold);font-size:23px}
 .results article span{display:block;color:var(--navy);font-weight:700;font-size:13px;margin:4px}
-.results article small{font-size:10px;line-height:1.35}
+.results article small{display:block;font-size:10px;line-height:1.35}
+.results article .result-date{white-space:nowrap}
 
 footer{position:relative;z-index:2;max-width:1080px;width:100%;margin:18px auto 0;border-top:1px solid #ddd;padding-top:14px;font-size:10px;letter-spacing:.08em;display:flex;justify-content:space-between;align-items:center}
 footer button{border:0;background:none;color:var(--gold);font-weight:800;cursor:pointer;letter-spacing:.1em;padding:4px 0}
