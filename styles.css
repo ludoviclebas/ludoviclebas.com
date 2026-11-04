@@ -183,3 +183,13 @@ footer button:hover,footer button:focus-visible{text-decoration:underline;outlin
 
 /* Centrage explicite des quatre accès sur téléphone. */
 @media(max-width:760px){.hub .portal{align-items:center;text-align:center}.hub .portal strong,.hub .portal small{width:100%;text-align:center}}
+
+/* Rubrique VALEURS — deux documents complémentaires */
+.valeurs-shell{width:min(900px,100%)}
+.valeurs-sections{display:grid;grid-template-columns:1fr 1fr;gap:32px;text-align:left;margin:36px 0 28px}
+.valeurs-sections section{border-top:1px solid var(--gold);padding-top:20px;display:flex;flex-direction:column}
+.valeurs-sections h2{font-size:18px;line-height:1.45;color:var(--navy);margin:0 0 14px;letter-spacing:.035em}
+.valeurs-sections p{font-size:15px;margin:0 0 22px}
+.valeurs-sections .subbtn{margin-top:auto;text-align:center;font-size:12px;line-height:1.5}
+.valeurs-home{display:inline-flex;min-height:44px;align-items:center;color:var(--gold);font-size:12px;font-weight:700;letter-spacing:.08em;text-underline-offset:4px}
+@media(max-width:600px){.valeurs-shell{padding:28px 22px}.valeurs-sections{grid-template-columns:1fr;gap:26px;margin-top:24px}.valeurs-sections h2{font-size:17px}.valeurs-sections p{font-size:14px;margin-bottom:16px}}
