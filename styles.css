@@ -195,3 +195,23 @@ footer button:hover,footer button:focus-visible{text-decoration:underline;outlin
 @media(max-width:600px){.valeurs-shell{padding:28px 22px}.valeurs-sections{grid-template-columns:1fr;gap:26px;margin-top:24px}.valeurs-sections h2{font-size:17px}.valeurs-sections p{font-size:14px;margin-bottom:16px}}
 
 .valeurs-sections section:nth-child(2) h2{text-align:center}
+
+/* Coordonnées immédiatement accessibles, y compris sur téléphone. */
+.hero-contact{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:6px 24px;margin:14px auto 0;font-size:14px;color:var(--navy)}
+.hero-contact a{display:inline-flex;align-items:center;justify-content:center;min-height:44px;text-underline-offset:4px;text-decoration-color:var(--gold)}
+.hero-contact a:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
+/* Fond sable réservé aux en-têtes. Le contenu du guide reste intact. */
+.valeurs-intro{position:relative;isolation:isolate;overflow:hidden;background:#f6f1e7;margin:-48px -48px 0;padding:48px 48px 28px}
+.valeurs-intro>.section-label,.valeurs-intro>h1,.valeurs-intro>p{position:relative;z-index:1}
+.valeurs-intro>p{margin-bottom:0}
+.intro-phoenix{position:absolute;inset:0;display:flex;align-items:center;justify-content:flex-end;padding-right:4%;pointer-events:none;z-index:0}
+.intro-bird{width:40%;aspect-ratio:1600/920;overflow:hidden;opacity:.07;mix-blend-mode:multiply}
+.intro-bird img{display:block;width:100%;height:auto;transform:translateY(-7.5%)}
+.guide-sand-page{position:relative;isolation:isolate;background:white}
+.guide-header-sand{position:absolute;inset:0 0 auto;height:13%;background:#f6f1e7;display:flex;align-items:center;justify-content:flex-end;padding-right:4%;overflow:hidden;pointer-events:none;z-index:0}
+.guide-header-sand .intro-bird{height:100%;width:auto;flex:none}
+.guide-sand-page>img{position:relative;z-index:1;mix-blend-mode:multiply;background:transparent}
+@media(max-width:760px){.hero-contact{gap:2px 18px;margin-top:12px;font-size:14px}.hero-contact a{min-height:44px}}
+@media(max-width:600px){.valeurs-intro{margin:-28px -22px 0;padding:28px 22px 24px}.intro-phoenix .intro-bird{width:66%}}
+
+.guide-header-sand .intro-bird img{width:100%;height:auto;background:transparent}
